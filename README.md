@@ -163,3 +163,23 @@ l.map(_*2)
 l.reverse
 l.sorted
 ```
+
+## Exercise 1.4: Functions
+4.1 Iterate over a list and multiply every element by 2
+### Anonymous function
+```scala
+val l = List(1,2,3)
+
+val r = l.map((x:Int) => x*2)
+
+val r = l.map(x => x*2)
+
+val r = l.map(_*2)
+```
+
+### Named function
+```
+def func(x: Int) = x*2
+
+val r = l.map(x => func(x))
+```
