@@ -80,3 +80,23 @@ val rdd2 = sc.parallelize(person.zip(dept))
 val res = rdd1.join(rdd2)
 res.collect()
 ```
+## Word Count
+1. reading files into memory
+```scala
+val lines = sc.textFile(“/tmp/spark-training/conf/”)
+val words = lines.flatMap(l => l.split(“ ”))
+words.collect()
+```
+
+2. count word frequency
+```scala
+val kwp = words.map(w => (w, 1))
+val res = kwp.reduceByKey(_ + _)
+res.collect()
+```
+
+3. sort results
+```scala
+val sorted = res.sortBy(_._2, false)
+sorted.collect()
+```
