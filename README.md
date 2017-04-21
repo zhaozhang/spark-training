@@ -152,3 +152,14 @@ val r = l.map(x => x*2)
 
 r
 ```
+### Play with List
+```scala
+val l = List(1,2,3,4,5)
+l.head
+l.tail
+l.last
+l.length
+l.map(_*2)
+l.reverse
+l.sorted
+```
