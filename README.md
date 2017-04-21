@@ -206,3 +206,46 @@ val l = List((1,2), (3,4))
 val r = l.map{case(x, y) => (x*2, y*2)}
 r
 ```
+
+## Exercise 1.4: Pattern Matching
+### Iterate over a list of integer and print only the odd number
+```scala
+val l = List(1,2,3,4,5)
+```
+
+1. Using if ... else ...
+```scala
+val r = l.foreach(x => {
+  if (x%2 == 1)
+    x
+})
+```
+
+2. Using match ... case ...
+```scala
+val r = l.foreach(x => x%2 match{
+  case 1 => x
+  case _ =>
+})
+```
+
+### Pattern matching on variable type
+```scala
+def func(a: Any) = a match {
+  case i:Int => println(“a is an int”)
+  case f:Float => println(”a is a float”)
+  case d:Double => println(“a is a double”)
+  case s:String => println(“a is a string”)
+  case l: List[_] => println(“a is a list”)
+  case _ => println(“unknown type”)
+})
+```
+
+```scala
+func(1)
+func(1.0)
+func(1.toFloat)
+func(“abc”)
+func(List(1,2,3))
+func(Array(1,2,3))
+```
