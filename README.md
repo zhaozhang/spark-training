@@ -171,10 +171,13 @@ l.sorted
 val l = List(1,2,3)
 
 val r = l.map((x:Int) => x*2)
+r
 
 val r = l.map(x => x*2)
+r
 
 val r = l.map(_*2)
+r
 ```
 
 2. Named function
@@ -182,4 +185,24 @@ val r = l.map(_*2)
 def func(x: Int) = x*2
 
 val r = l.map(x => func(x))
+r
+```
+
+3. Multiple Inputs
+```scala
+val l = List((1,2), (3,4))
+
+val r = l.map{case(x:Int, y: Int) => x+y}
+r
+
+val r = l.map{case(x, y) => x+y}
+r
+```
+
+4. Multiple Outputs
+```scala
+val l = List((1,2), (3,4))
+
+val r = l.map{case(x, y) => (x*2, y*2)}
+r
 ```
