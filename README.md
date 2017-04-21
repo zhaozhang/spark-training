@@ -249,3 +249,18 @@ func(“abc”)
 func(List(1,2,3))
 func(Array(1,2,3))
 ```
+
+## Exercise 1.6: Iterator
+```scala
+val l = List(1,2,3,4,5,6)
+
+val i = l.toIterator
+
+val r1 = l.map(_*2)
+
+val r = i.map(_*2)
+r.hasNext
+r.next
+
+val r2 = r.toList
+```
