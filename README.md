@@ -133,6 +133,8 @@ var i = 0
 while(i<l.length){
   r += l(i)*2
 }
+
+r
 ```
 
 2. Using *for*
@@ -140,9 +142,13 @@ while(i<l.length){
 import scala.collection.mutable.ListBuffer
 
 val r = for(x <-l) yield(x*2)
+
+r
 ```
 
 3. Using *map*
 ```scala
 val r = l.map(x => x*2)
+
+r
 ```
