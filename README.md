@@ -12,10 +12,15 @@ object HelloWorld {
   }
 }
 ```
-2. scalac HelloWorld.scala
+2. Complie the source code
+```bash
+scalac HelloWorld.scala
+```
 
-3. scala HelloWorld
-
+3. Execute the compiled program
+```bash
+scala HelloWorld
+```
 
 ### Scripting
 
