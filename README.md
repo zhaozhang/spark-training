@@ -82,3 +82,38 @@ l += 7
 ```scala
 l(1) = 8
 ```
+
+### What if *var l* ?
+1. The variable *l* ?
+
+```scala
+var l = List(1,2,3)
+l = List(4,5,6)
+```
+
+2. The list that *l* points to?
+
+```scala
+l += 7
+```
+
+3. The elements of *l* ?
+
+```scala
+l(1) = 8
+```
+
+### Using ListBuffer if you need a mutable list
+
+```scala
+import scala.collection.mutable.ListBuffer
+
+var l = new ListBuffer[Any]()
+l += 1
+l += 2
+l += 3
+l
+
+l(1) = 9
+l
+```
