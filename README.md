@@ -207,7 +207,7 @@ val r = l.map{case(x, y) => (x*2, y*2)}
 r
 ```
 
-## Exercise 1.4: Pattern Matching
+## Exercise 1.5: Pattern Matching
 ### Iterate over a list of integer and print only the odd number
 ```scala
 val l = List(1,2,3,4,5)
