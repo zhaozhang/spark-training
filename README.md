@@ -3,6 +3,7 @@
 ## Exercise 1.1: Three Ways to Run a Scala Program
 
 ### Compile and Execute
+1. Create HelloWorld.scala using your text editor, then type the following code:
 
 ```scala
 object HelloWorld {
@@ -11,6 +12,10 @@ object HelloWorld {
   }
 }
 ```
+2. scalac HelloWorld.scala
+
+3. scala HelloWorld
+
 
 ### Scripting
 
