@@ -45,8 +45,14 @@ chmod 755 HelloWorld.sh
 ./HelloWorld.sh
 ```
 
-### Scala shell1
+### Scala shell
 
+1. Open Scala shell
+```bash
+scala
+```
+
+2. Type the following code then press ENTER
 ```scala
 println(“Hello World!”)
 ```
