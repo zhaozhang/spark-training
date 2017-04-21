@@ -117,3 +117,32 @@ l
 l(1) = 9
 l
 ```
+
+## Exercise 1.3: Iterate a list
+### Multiply each element of a list by 2
+```scala
+val l = List(1,2,3)
+```
+
+1. Using *while* 
+```scala
+import scala.collection.mutable.ListBuffer
+
+val r = new ListBuffer[Any]()
+var i = 0
+while(i<l.length){
+  r += l(i)*2
+}
+```
+
+2. Using *for*
+```scala
+import scala.collection.mutable.ListBuffer
+
+val r = for(x <-l) yield(x*2)
+```
+
+3. Using *map*
+```scala
+val r = l.map(x => x*2)
+```
