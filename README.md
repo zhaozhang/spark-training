@@ -61,4 +61,4 @@ println(“Hello World!”)
 ```scala
 :quit
 ```
-or press CTRL+d
+   or press CTRL+d
