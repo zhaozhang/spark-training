@@ -56,3 +56,9 @@ scala
 ```scala
 println(“Hello World!”)
 ```
+
+3. Quit the shell
+```scala
+:quit
+```
+or press CTRL+d
