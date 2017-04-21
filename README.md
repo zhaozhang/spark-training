@@ -62,3 +62,23 @@ println(“Hello World!”)
 :quit
 ```
 &nbsp;&nbsp;&nbsp;or press CTRL+d
+
+## Exercise 1.2: What is immutable when we say a list is immutable?
+1. The variable *l*?
+
+```scala
+val l = List(1,2,3)
+l = List(4,5,6)
+```
+
+2. The list that l points to?
+
+```scala
+l += 7
+```
+
+3. The elements of l?
+
+```scala
+l(1) = 8
+```
