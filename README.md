@@ -24,6 +24,8 @@ scala HelloWorld
 
 ### Scripting
 
+1. Create HelloWorld.sh, then type in the following code:
+
 ```scala
 #!/usr/bin/env scala
  
@@ -31,6 +33,16 @@ object HelloWorld extends App{
     println("Hello, world!")
 }
 HelloWorld.main(args)
+```
+
+2. Change execution permission
+```bash
+chmod 755 HelloWorld.sh
+```
+
+3. Run the script
+```bash
+./HelloWorld.sh
 ```
 
 ### Scala shell1
