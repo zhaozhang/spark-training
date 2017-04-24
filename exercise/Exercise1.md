@@ -251,6 +251,7 @@ func(Array(1,2,3))
 ```
 
 ## Exercise 1.6: Iterator
+1. Basic operation
 ```scala
 val l = List(1,2,3,4,5,6)
 
@@ -263,4 +264,18 @@ r.hasNext
 r.next
 
 val r2 = r.toList
+```
+
+2. Verify late evaluation
+```scala
+val l = List(1,2,3,4,5,6)
+
+val i = l.toIterator
+
+val r = i.map(x => {
+  Thread.sleep(1000)
+  x*2
+})
+
+r.toList
 ```
