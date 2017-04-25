@@ -80,7 +80,7 @@ val rdd2 = sc.parallelize(person.zip(dept))
 val res = rdd1.join(rdd2)
 res.collect()
 ```
-## Word Count
+## Exercise 2.2: Word Count
 1. reading files into memory
 ```scala
 val lines = sc.textFile(“/tmp/spark-training/conf/”)
@@ -101,7 +101,7 @@ val sorted = res.sortBy(_._2, false)
 sorted.collect()
 ```
 
-## Build Spark application with Maven
+## Exercise 2.3: Build Spark application with Maven
 ```bash
 export M2_HOME=/opt/apps/apache-maven/3.2.2
 export PATH=$M2_HOME/bin:$PATH
@@ -111,7 +111,7 @@ mvn package
 spark-submit --class "WordCount" --master yarn --deploy-mode client target/WordCount-1.0-SNAPSHOT.jar
 ```
 
-## Unit Test with scalatest and Maven
+## Exercise 2.4: Unit Test with scalatest and Maven
 Go to training2017/
 ```
 mvn test
