@@ -112,3 +112,7 @@ spark-submit --class "WordCount" --master yarn --deploy-mode client target/WordC
 ```
 
 ## Unit Test with scalatest and Maven
+Go to training2017/
+```
+mvn test
+```
