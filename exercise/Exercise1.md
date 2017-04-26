@@ -8,7 +8,7 @@ ssh -u $username@wrangler.tacc.utexas.edu
 
 cd ~
 
-git clone https://github.com/zhaozhang/training2017.git
+git clone https://github.com/zhaozhang/spark-training.git
 ```
 ### Zeppelin
 ```bash
@@ -16,7 +16,7 @@ git clone https://github.com/zhaozhang/training2017.git
 
 cd ~
 
-git clone https://github.com/zhaozhang/training2017.git
+git clone https://github.com/zhaozhang/spark-training.git
 ```
 
 ## Exercise 1.1: Three Ways to Run a Scala Program
