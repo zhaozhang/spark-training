@@ -6,6 +6,8 @@
 ```bash
 ssh -u $username@wrangler.tacc.utexas.edu
 
+cd ~
+
 git clone https://github.com/zhaozhang/training2017.git
 ```
 ### Zeppelin
