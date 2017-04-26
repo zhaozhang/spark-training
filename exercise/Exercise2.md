@@ -103,12 +103,13 @@ sorted.collect()
 
 ## Exercise 2.3: Build Spark application with Maven
 ```bash
-export M2_HOME=/opt/apps/apache-maven/3.2.2
-export PATH=$M2_HOME/bin:$PATH
+cd ~/spark-training
+
+module load maven
 
 mvn package
 
-spark-submit --class "WordCount" --master yarn --deploy-mode client target/WordCount-1.0-SNAPSHOT.jar
+spark-submit --class "WordCount" target/WordCount-1.0-SNAPSHOT.jar
 ```
 
 ## Exercise 2.4: Unit Test with scalatest and Maven
