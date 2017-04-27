@@ -109,7 +109,7 @@ module load maven
 
 mvn package
 
-spark-submit --class "WordCount" target/WordCount-1.0-SNAPSHOT.jar
+spark-submit --class WordCount target/WordCount-1.0-SNAPSHOT.jar
 ```
 
 ## Exercise 2.4: Unit Test with scalatest and Maven
