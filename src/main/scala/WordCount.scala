@@ -15,4 +15,6 @@ object WordCount {
 
     println("Word Count results: "+sorted.collect.mkString(","))
   }
+
+  def func(x: Int) = x*x
 }

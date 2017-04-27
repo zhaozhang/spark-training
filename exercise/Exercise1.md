@@ -1,5 +1,24 @@
 # Exercises of Introduction to Scala for Spark
 
+## Login Wrangler
+
+### Terminal
+```bash
+ssh -u $username@wrangler.tacc.utexas.edu
+
+cd ~
+
+git clone https://github.com/zhaozhang/spark-training.git
+```
+### Zeppelin
+```bash
+%shell
+
+cd ~
+
+git clone https://github.com/zhaozhang/spark-training.git
+```
+
 ## Exercise 1.1: Three Ways to Run a Scala Program
 
 ### Compile and Execute
