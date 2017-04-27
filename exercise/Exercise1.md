@@ -151,6 +151,7 @@ val r = new ListBuffer[Any]()
 var i = 0
 while(i<l.length){
   r += l(i)*2
+  i = i +1
 }
 
 r
