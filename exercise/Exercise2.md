@@ -83,7 +83,7 @@ res.collect()
 ## Exercise 2.2: Word Count
 1. reading files into memory
 ```scala
-val lines = sc.textFile(“/tmp/spark-training/conf/”)
+val lines = sc.textFile(“/tmp/data/book.txt”)
 val words = lines.flatMap(l => l.split(“ ”))
 words.collect()
 ```
