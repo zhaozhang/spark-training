@@ -151,7 +151,7 @@ val r = new ListBuffer[Any]()
 var i = 0
 while(i<l.length){
   r += l(i)*2
-  i = i +1
+  i = i + 1
 }
 
 r
@@ -237,14 +237,14 @@ val l = List(1,2,3,4,5)
 ```scala
 val r = l.foreach(x => {
   if (x%2 == 1)
-    x
+    println(x)
 })
 ```
 
 2. Using match ... case ...
 ```scala
 val r = l.foreach(x => x%2 match{
-  case 1 => x
+  case 1 => println(x)
   case _ =>
 })
 ```
