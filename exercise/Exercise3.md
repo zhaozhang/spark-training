@@ -71,6 +71,7 @@ mseTest
 ### Logistic Regression
 ```
 import org.apache.spark.mllib.classification.{LogisticRegressionModel, LogisticRegressionWithLBFGS}
+import org.apache.spark.mllib.evaluation.MulticlassMetrics
 import org.apache.spark.mllib.linalg._
 import org.apache.spark.mllib.regression.LabeledPoint
 
@@ -85,7 +86,7 @@ model.weights
 
 val trainPrediction = lines.map(l => {
   val w = l.split(“,")
-  (model.predict(Vectors.dense(w(5).toDouble, w(4).toDouble, w(1).toDouble), w(0).toDouble)
+  (model.predict(Vectors.dense(w(5).toDouble, w(4).toDouble, w(1).toDouble)), w(0).toDouble)
 })
 
 val metrics = new MulticlassMetrics(trainPrediction)
@@ -104,6 +105,44 @@ metrics.precision
 ```
 
 ## Exercise 3.3
+### Support Vector Machine
+```
+import org.apache.spark.mllib.classification.{SVMModel, SVMWithSGD}
+import org.apache.spark.mllib.evaluation.MulticlassMetrics
+import org.apache.spark.mllib.linalg._
+import org.apache.spark.mllib.regression.LabeledPoint
+
+val lines = sc.textFile(“/tmp/data/scaled-sf-ny-housing-train.csv")
+val data = lines.map(l => {
+  val w = l.split(",")
+  LabeledPoint(w(0).toDouble, Vectors.dense(w(5).toDouble, w(4).toDouble, w(1).toDouble))
+})
+val model = SVMWithSGD.train(data, 1000)
+
+model.weights
+
+val trainPrediction = lines.map(l => {
+  val w = l.split(“,")
+  (model.predict(Vectors.dense(w(5).toDouble, w(4).toDouble, w(1).toDouble)), w(0).toDouble)
+})
+
+val metrics = new MulticlassMetrics(trainPrediction)
+metrics.precision
+> res12: Double = 0.525
+
+val tlines = sc.textFile(“/tmp/data/scaled-sf-ny-housing-test.csv")
+val testPrediction = tlines.map(l => {
+  val w = l.split(“,")
+  (model.predict(Vectors.dense(w(5).toDouble, w(4).toDouble, w(1).toDouble)), w(0).toDouble)
+})
+
+val metrics = new MulticlassMetrics(testPrediction)
+metrics.precision
+> res12: Double = 0.6304347826086957
+```
+
+
+## Exercise 3.4
 ### k-means Clustering
 ```
 import org.apache.spark.mllib.linalg._
@@ -127,7 +166,7 @@ res
 //res: Int = 177
 ```
 
-## Exercise 3.4
+## Exercise 3.5
 ### PageRank with GraphX
 ```
 import org.apache.spark.graphx._
