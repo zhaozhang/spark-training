@@ -43,7 +43,7 @@ import org.apache.spark.mllib.regression.LinearRegressionWithSGD
 val lines = sc.textFile(“/tmp/data/scaled-sf-ny-housing-train.csv")
 val data = lines.map(l => {
   val w = l.split(",")
-  LabeledPoint(w(3).toDouble, Vectors.dense(w(5).toDouble, w(4).toDouble, w(1).toDouble))})
+  LabeledPoint(w(3).toDouble, Vectors.dense(w(5).toDouble, w(4).toDouble, w(1).toDouble))
 })
 val model = LinearRegressionWithSGD.train(data,100)
 
@@ -77,7 +77,7 @@ import org.apache.spark.mllib.regression.LabeledPoint
 val lines = sc.textFile(“/tmp/data/scaled-sf-ny-housing-train.csv")
 val data = lines.map(l => {
   val w = l.split(",")
-  LabeledPoint(w(0).toDouble, Vectors.dense(w(5).toDouble, w(4).toDouble, w(1).toDouble))})
+  LabeledPoint(w(0).toDouble, Vectors.dense(w(5).toDouble, w(4).toDouble, w(1).toDouble))
 })
 val model = new LogisticRegressionWithLBFGS().setNumClasses(2).run(data)
 
