@@ -128,7 +128,7 @@ val trainPrediction = lines.map(l => {
 
 val metrics = new MulticlassMetrics(trainPrediction)
 metrics.precision
-> res12: Double = 0.525
+//> res12: Double = 0.525
 
 val tlines = sc.textFile("/tmp/data/scaled-sf-ny-housing-test.csv")
 val testPrediction = tlines.map(l => {
@@ -138,7 +138,7 @@ val testPrediction = tlines.map(l => {
 
 val metrics = new MulticlassMetrics(testPrediction)
 metrics.precision
-> res12: Double = 0.6304347826086957
+//> res12: Double = 0.6304347826086957
 ```
 
 
@@ -148,7 +148,7 @@ metrics.precision
 import org.apache.spark.mllib.linalg._
 import org.apache.spark.mllib.clustering.{KMeans, KMeansModel}
 
-val lines = sc.textFile("/Users/zzhang/Works/training2016/data/scaled-sf-ny-housing-train.csv")
+val lines = sc.textFile("/tmp/spark-training/data/scaled-sf-ny-housing-train.csv")
 
 val data = lines.map(l => {
   val w = l.split(",")
