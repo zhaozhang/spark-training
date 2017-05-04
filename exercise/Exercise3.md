@@ -7,7 +7,7 @@ import org.apache.spark.mllib.linalg._
 import org.apache.spark.mllib.regression.LabeledPoint
 import org.apache.spark.mllib.regression.LinearRegressionWithSGD
 
-val lines = sc.textFile(“/tmp/data/scaled-sf-ny-housing-train.csv")
+val lines = sc.textFile("/tmp/data/scaled-sf-ny-housing-train.csv")
 val data = lines.map(l => {
   val w = l.split(",")
   LabeledPoint(w(3).toDouble, Vectors.dense(w(5).toDouble))
@@ -24,7 +24,7 @@ val mseTrain = trainError.map(x=>x*x).reduce(_+_)/400
 mseTrain
 //mseTrain: Double = 0.06472201882476669
 
-val tlines = sc.textFile(“/tmp/data/scaled-sf-ny-housing-test.csv")
+val tlines = sc.textFile("/tmp/data/scaled-sf-ny-housing-test.csv")
 val testError = tlines.map(l => {
   val w = l.split(",")
   model.predict(Vectors.dense(w(5).toDouble))-w(3).toDouble
@@ -40,7 +40,7 @@ import org.apache.spark.mllib.linalg._
 import org.apache.spark.mllib.regression.LabeledPoint
 import org.apache.spark.mllib.regression.LinearRegressionWithSGD
 
-val lines = sc.textFile(“/tmp/data/scaled-sf-ny-housing-train.csv")
+val lines = sc.textFile("/tmp/data/scaled-sf-ny-housing-train.csv")
 val data = lines.map(l => {
   val w = l.split(",")
   LabeledPoint(w(3).toDouble, Vectors.dense(w(5).toDouble, w(4).toDouble, w(1).toDouble))
@@ -57,7 +57,7 @@ val mseTrain = trainError.map(x=>x*x).reduce(_+_)/400
 mseTrain
 //mseTrain: Double = 0.06222798683227797
 
-val tlines = sc.textFile(“/tmp/data/scaled-sf-ny-housing-test.csv")
+val tlines = sc.textFile("/tmp/data/scaled-sf-ny-housing-test.csv")
 val testError = tlines.map(l => {
   val w = l.split(",")
   model.predict(Vectors.dense(w(5).toDouble, w(4).toDouble, w(1).toDouble))-w(3).toDouble
@@ -93,7 +93,7 @@ val metrics = new MulticlassMetrics(trainPrediction)
 metrics.precision
 //res12: Double = 0.6575
 
-val tlines = sc.textFile(“/tmp/data/scaled-sf-ny-housing-test.csv")
+val tlines = sc.textFile("/tmp/data/scaled-sf-ny-housing-test.csv")
 val testPrediction = tlines.map(l => {
   val w = l.split(",")
   (model.predict(Vectors.dense(w(5).toDouble, w(4).toDouble, w(1).toDouble)), w(0).toDouble)
