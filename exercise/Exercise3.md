@@ -155,6 +155,8 @@ val data = lines.map(l => {
   Vectors.dense(w(1).toDouble, w(2).toDouble, w(3).toDouble, w(4).toDouble, w(5).toDouble, w(6).toDouble)
 })
 
+val clusters = KMeans.train(data, 2, 100)
+
 val pred = lines.map(l => {
   val w = l.split(",")
   val v = Vectors.dense(w(1).toDouble, w(2).toDouble, w(3).toDouble, w(4).toDouble, w(5).toDouble, w(6).toDouble)
