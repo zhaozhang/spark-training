@@ -212,4 +212,29 @@ val graph = GraphLoader.edgeListFile(sc, “/tmp/data/followers.txt")
 val ranks = graph.pageRank(0.0001).vertices
 ranks.sortBy(_._2, false).collect
 // you should see res10: Array[(org.apache.spark.graphx.VertexId, Double)] = Array((1,1.4588814096664682), (2,1.390049198216498),  (7,1.2973176314422592), (3,0.9993442038507723),  (6,0.7013599933629602), (4,0.15))
+
+
+## Exercise 3.7
+### DataFrame and SparkSQL
+import org.apache.spark.sql.SparkSession
+import org.apache.spark.sql.functions._
+import org.apache.spark.ml.regression.LinearRegression
+import org.apache.spark.ml.feature.VectorAssembler
+import org.apache.spark.ml.Pipeline
+
+val spark = SparkSession.builder().appName("Spark SQL basic example").config("spark.some.config.option", "some-value").getOrCreate()
+import spark.implicits._
+
+val df = spark.read.format("csv").option("header", false).load("/tmp/data/shuffled-scaled-fs-ny-housing.csv").selectExpr("_c3 + 0.0 as sqft", "_c5 + 0.0 as label")
+
+val training = df.sample(false, 0.8)
+val test = df.except(training)
+val assembler = new VectorAssembler().setInputCols(Array("sqft")).setOutputCol("features")
+
+val lr = new LinearRegression().setMaxIter(10).setRegParam(0.2).setElasticNetParam(0.0)
+val pipeline = new Pipeline().setStages(Array(assembler, lr))
+val lrModel = pipeline.fit(training)
+
+val result = lrModel.transform(test).select('sqft, 'label, 'prediction)
+result.show
 ```
