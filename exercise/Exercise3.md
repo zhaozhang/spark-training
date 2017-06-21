@@ -212,10 +212,11 @@ val graph = GraphLoader.edgeListFile(sc, “/tmp/data/followers.txt")
 val ranks = graph.pageRank(0.0001).vertices
 ranks.sortBy(_._2, false).collect
 // you should see res10: Array[(org.apache.spark.graphx.VertexId, Double)] = Array((1,1.4588814096664682), (2,1.390049198216498),  (7,1.2973176314422592), (3,0.9993442038507723),  (6,0.7013599933629602), (4,0.15))
-
+```
 
 ## Exercise 3.7
 ### DataFrame and SparkSQL
+```
 import org.apache.spark.sql.SparkSession
 import org.apache.spark.sql.functions._
 import org.apache.spark.ml.regression.LinearRegression
