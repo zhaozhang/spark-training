@@ -142,6 +142,7 @@ metrics.precision
 ```
 ## Exercise 3.4
 ### Alternating Least Squares
+```
 import org.apache.spark.mllib.recommendation.ALS
 import org.apache.spark.mllib.recommendation.MatrixFactorizationModel
 import org.apache.spark.mllib.recommendation.Rating
@@ -174,6 +175,7 @@ val MSE = ratesAndPreds.map { case ((user, product), (r1, r2)) =>
 }.mean()
 println("Mean Squared Error = " + MSE)
 //MSE: Double = 4.586503035462018E-5
+```
 
 
 ## Exercise 3.5
